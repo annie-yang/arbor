@@ -4,34 +4,16 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
 
 public class MainActivity extends ActionBarActivity {
-    private Button addButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        addButton = (Button)findViewById(R.id.addBtn);
-
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),
-                    "We are going to win!", Toast.LENGTH_LONG).show();
-            }
-        });
-
-
-        double lat = 37.51;
-        double lon = -120.85;
-        new Weather(this).execute(lat, lon);
-        Toast.makeText(this, "iasdkjfnasdkfjna", Toast.LENGTH_SHORT).show();
-
     }
 
     @Override

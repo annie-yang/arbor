@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.annie.arbor" >
+    <meta-data android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.google.android.gms.location.sample.basiclocationsample" >
+
+        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    </manifest>
     <uses-permission android:name="android.permission.INTERNET"
         android:maxSdkVersion="21" />
     <application
