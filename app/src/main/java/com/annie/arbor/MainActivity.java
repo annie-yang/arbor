@@ -1,29 +1,30 @@
 package com.annie.arbor;
 
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
-
-    public class toDoDB {
-        class Row extends Object{
-            public long _id;
-            public String name;
-        }
-        private SQLiteDatabase db;
-        private static final int version = 1;
-        private static final String name = "todoListDatabase";
-        private static final String table = "todoList";
-
-    }
+    private Button addButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        addButton = (Button)findViewById(R.id.addBtn);
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),
+                    "We are going to win!", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
@@ -41,9 +42,9 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+       /* if (id == R.id.action_settings) {
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
