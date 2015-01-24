@@ -1,28 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.annie.arbor" >
-    <meta-data android:name="com.google.android.gms.version"
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.annie.arbor"
+        android:versionCode="1"
+        android:versionName="1.0" >
+
+        <uses-permission android:name="com.annie.arbor.permission.MAPS_RECEIVE" />
+
+        <meta-data
+        android:name="com.google.android.gms.version"
         android:value="@integer/google_play_services_version" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="permission_name"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="permission_name" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
-        android:required="true"/>
+        android:required="true" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <meta-data android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyBx833J4cz5Ebb-YTjHW2wO7J4kQEGLrtk"/>
+
         <activity
-            android:name=".MainActivity"
+            android:name="com.annie.arbor.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +36,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name="com.annie.arbor.map"
+            android:label="@string/title_activity_map" >
+        </activity>
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBx833J4cz5Ebb-YTjHW2wO7J4kQEGLrtk" />
     </application>
 
 </manifest>

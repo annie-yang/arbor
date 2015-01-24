@@ -4,6 +4,9 @@
     <string name="app_name">Arbor</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
     <color name="grey">#e0e0e0</color>
+
+    <string name="title_activity_map">map</string>
 
 </resources>

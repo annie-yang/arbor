@@ -49,4 +49,14 @@
         android:width="350dp"
         android:onClick=""/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Click here for the map"
+        android:layout_below="@+id/addBtn"
+        android:layout_centerHorizontal="true"
+        android:onClick="map"
+        android:width="350dp"/>
+
 </RelativeLayout>

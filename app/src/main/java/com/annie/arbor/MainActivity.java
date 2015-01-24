@@ -1,8 +1,10 @@
 package com.annie.arbor;
 
+import android.app.Activity;
 import android.content.Context;
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.app.Activity;
+import android.os.Bundle;
 
 import java.util.ArrayList;
 
@@ -26,7 +30,6 @@ public class MainActivity extends ActionBarActivity {
     ArrayAdapter<String> adapter;
     String task = "";
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         super.onCreate(savedInstanceState);
@@ -56,11 +59,16 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-
         double lat = 37.51;
         double lon = -120.85;
         new Weather(this).execute(lat, lon);
         /**Toast.makeText(this, "iasdkjfnasdkfjna", Toast.LENGTH_SHORT).show();*/
+
+    }
+
+    public void map(View v){
+        Intent maps = new Intent(this, map.class);
+        startActivity(maps);
     }
 
     @Override
