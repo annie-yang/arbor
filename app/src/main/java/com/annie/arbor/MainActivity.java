@@ -25,6 +25,13 @@ public class MainActivity extends ActionBarActivity {
                     "We are going to win!", Toast.LENGTH_LONG).show();
             }
         });
+
+
+        double lat = 37.51;
+        double lon = -120.85;
+        new Weather(this).execute(lat, lon);
+        Toast.makeText(this, "iasdkjfnasdkfjna", Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
