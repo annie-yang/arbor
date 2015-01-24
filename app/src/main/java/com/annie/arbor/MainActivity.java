@@ -1,28 +1,59 @@
 package com.annie.arbor;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity extends ActionBarActivity {
     private Button addButton;
+    private EditText addTask;
+    private RelativeLayout mainLayout;
+
+    final ArrayList<String> taskArray = new ArrayList<String>();
+    ArrayAdapter<String> adapter;
+    String task = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mainLayout = (RelativeLayout)findViewById(R.id.arbor);
+        final InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         addButton = (Button)findViewById(R.id.addBtn);
+        addTask = (EditText)findViewById(R.id.addTask);
+        ListView myListView = (ListView)findViewById(R.id.tasksView);
+
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, taskArray);
+        myListView.setAdapter(adapter);
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),
-                    "We are going to win!", Toast.LENGTH_LONG).show();
+                /**Toast.makeText(getApplicationContext(),
+                    addTask.getText(), Toast.LENGTH_LONG).show();*/
+                task = addTask.getText().toString();
+                if (! task.equals("")) {
+                    taskArray.add(0, task);
+                    adapter.notifyDataSetChanged();
+                    imm.hideSoftInputFromWindow(mainLayout.getWindowToken(), 0);
+                    addTask.setText("");
+                }
             }
         });
 
@@ -30,7 +61,7 @@ public class MainActivity extends ActionBarActivity {
         double lat = 37.51;
         double lon = -120.85;
         new Weather(this).execute(lat, lon);
-        Toast.makeText(this, "iasdkjfnasdkfjna", Toast.LENGTH_SHORT).show();
+        /**Toast.makeText(this, "iasdkjfnasdkfjna", Toast.LENGTH_SHORT).show();*/
 
     }
 

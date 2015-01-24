@@ -3,6 +3,8 @@
     package="com.annie.arbor" >
     <uses-permission android:name="android.permission.INTERNET"
         android:maxSdkVersion="21" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"
+        android:maxSdkVersion="21" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
