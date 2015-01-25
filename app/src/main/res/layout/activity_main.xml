@@ -7,40 +7,32 @@
     android:background="@color/grey"
     android:id="@+id/arbor">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Arbor"
-        android:id="@+id/arborText"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="40dp"/>
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/addTask"
-        android:layout_below="@+id/arborText"
-        android:layout_marginTop="61dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:hint="Type here to add a task"
         android:width="350dp"
-        android:imeOptions="actionSend"/>
+        android:textColor="#000000"
+        android:imeOptions="actionSend"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/addBtn"
+        android:layout_alignStart="@+id/addBtn"/>
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tasksView"
-        android:layout_marginTop="33dp"
         android:textColor="#FFFFFF"
-        android:layout_below="@+id/addBtn"
-        android:layout_alignLeft="@+id/addTask"
-        android:layout_alignStart="@+id/addTask" />
+        android:layout_below="@+id/mapBtn"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Add Task"
         android:id="@+id/addBtn"
         android:layout_below="@+id/addTask"
@@ -53,7 +45,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Click here for the map"
+        android:text="Click here for Map"
+        android:id="@+id/mapBtn"
         android:layout_below="@+id/addBtn"
         android:layout_centerHorizontal="true"
         android:onClick="map"

@@ -12,25 +12,23 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class map extends ActionBarActivity {
     private GoogleMap map;
-    private final LatLng LOCATION = new LatLng(49.27645, -122.97587);
-    static final LatLng lo = new LatLng(37 , -120.85);
+    static final LatLng location = new LatLng(37.4938737 , -120.8485094);
     private GoogleMap googleMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-
         map = ((MapFragment)getFragmentManager().findFragmentById(R.id.map)).getMap();
 
         try {
             if (googleMap == null) {
-                googleMap = ((MapFragment) getFragmentManager().
+                googleMap = ((MapFragment)getFragmentManager().
                         findFragmentById(R.id.map)).getMap();
             }
-            googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+            googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             Marker TP = googleMap.addMarker(new MarkerOptions().
-                    position(lo).title("HERE"));
+                    position(location).title("You are here"));
             } catch (Exception e) {
                 e.printStackTrace();
             }
